@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>Admin panel</title>
+<link rel="stylesheet" href="admin.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+</head>
+
+<body>
+  <div class="container admin">
+    <!--first row -->
+    <div class="row mt-3">
+      <div class="col-md-3">
+        <div class="card" data-toggle="modal" data-target="#Add-university-modal">
+          <div class="card-body text-center">
+            <div class="container">
+              <img style="max-width: 150px;" class="img-fluid rounded" src="icon/university.webp" alt="university">
+            </div>
+            <h1 class="text-uppercase text-muted">University</h1>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="card" data-toggle="modal" data-target="#Add-branch-modal">
+          <div class="card-body text-center">
+            <div class="container">
+              <img style="max-width: 150px;" class="img-fluid rounded" src="icon/branch.png" alt="university">
+            </div>
+            <h1 class="text-uppercase text-muted">Branch</h1>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="card" style="max-height: 100%;" data-toggle="modal" data-target="#Add-programme-modal">
+          <div class="card-body text-center">
+            <div class="container">
+              <img style="max-width: 150px;" class="img-fluid rounded" src="icon/programme.png" alt="university">
+            </div>
+            <h1>5</h1>
+            <h3 class="text-uppercase text-muted">Programme</h3>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="card" data-toggle="modal" data-target="#Add-course-modal">
+          <div class="card-body text-center">
+            <div class="container">
+              <img style="max-width: 150px;" class="img-fluid rounded" src="icon/course.png" alt="university">
+            </div>
+            <h1>5</h1>
+            <h1 class="text-uppercase text-muted">Course</h1>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- second row -->
+    <div class="row-mt-3">
+    <div class="last">
+      <div class="card" data-toggle="modal" data-target="#add-documents-modal">
+        <div class="card-body text-center">
+          <div class="container">
+            <img style="max-width: 150px;" class="img-fluid rounded" src="icon/screenshot.png" alt="university">
+          </div>
+
+          <h1 class="text-uppercase text-muted">add documents</h1>
+        </div>
+      </div>
+    </div>
+    <div class="last">
+      <div class="card" data-toggle="modal" data-target="#Add-message-modal">
+        <div class="card-body text-center">
+          <div class="container">
+            <img style="max-width: 150px;" class="img-fluid rounded" src="icon/minus.png" alt="university">
+          </div>
+          <h1 class="text-uppercase text-muted">Add branch messages</h1>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+  <!-- Button trigger modal -->
+
+<!-- Modal -->
+<div class="modal fade" id="add-documents-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Add documents</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form action="documentServlet.java" method="post">
+          <p>Document_no.</p>
+          <input type="text" placeholder="Document_no." name="Document" required>
+          <p>Type</p>
+          <input type="text" placeholder="Type" name="name" required>
+          <p>Required_for</p>
+          <input type="text" placeholder="Description" name="Description" required>
+          <p>Validation</p>
+          <input type="text" placeholder="Valid/notValid" name="Boolean" required>
+          <p>Programme</p>
+          <input type="text" placeholder="Programme" name="Programme" required>
+
+          <input type="submit" value="upload">
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal fade" id="Add-message-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Add Branch Messages</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form action="BranchMessageServlet.java" method="post">
+          <p>FromBranchId</p>
+          <input type="text" placeholder="FromBranchId" name="branch_id" required>
+          <p>BranchId</p>
+          <input type="text" placeholder="Branch_Id" name="number" required>
+          <p>MsgContent</p>
+          <input type="text" placeholder="Message" name="Message" required>
+          <p>MsgDt</p>
+          <input type="text" placeholder="Date" name="date" required>
+          <p>MsgTitle</p>
+          <input type="text" placeholder="title" name="title" required>
+
+          <input type="submit" value="upload">
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Submit</button>
+
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal fade" id="Add-university-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Add university</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form action="UniversityServlet.java" method="post">
+          <p>UniversityId</p>
+          <input type="text" placeholder="UniversityId" name="university_id" required>
+          <p>Name</p>
+          <input type="text" placeholder="Name" name="name" required>
+          <p>Country</p>
+          <input type="text" placeholder="country" name="country" required>
+          <p>Type</p>
+          <input type="text" placeholder="type" name="type" required>
+          <p>Reg_no</p>
+          <input type="text" placeholder="Registration_no." name="registration" required>
+          <p>Remarks</p>
+          <input type="text" placeholder="remarks" name="remarks" required>
+          <p>Grades</p>
+          <input type="text" placeholder="Grade." name="grades" required>
+          <input type="submit" value="upload">
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Submit</button>
+
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal fade" id="Add-branch-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Add Branch</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form action="BranchServlet.java" method="post">
+          <p>BranchId</p>
+          <input type="text" placeholder="BranchId" name="branch_id" required>
+          <p>BranchName</p>
+          <input type="text" placeholder="Branch_name" name="name" required>
+          <p>Address</p>
+          <input type="text" placeholder="Address" name="Address" required>
+          <p>Country</p>
+          <input type="text" placeholder="country" name="country" required>
+          <p>contact_no.</p>
+          <input type="text" placeholder="contact_no" name="contact" required>
+          <p>Email</p>
+          <input type="email" placeholder="mail address" name="email" required>
+
+          <input type="submit" value="upload">
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Submit</button>
+
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal fade" id="Add-programme-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Add programme</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form action="ProgrammeServlet.java" method="post">
+          <p>Programme_code</p>
+          <input type="text" placeholder="Programme_code" name="code" required>
+          <p>Programme_name</p>
+          <input type="text" placeholder="Programme_name" name="name" required>
+          <p>Duration</p>
+          <input type="text" placeholder="Years" name="years" required>
+          <p>Type</p>
+          <input type="text" placeholder="type" name="type" required>
+          <p>Programe_fee</p>
+          <input type="text" placeholder="fees" name="fees" required>
+
+          <input type="submit" value="upload">
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Submit</button>
+
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal fade" id="Add-course-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Add Course</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form action="CourseServlet.java" method="post">
+          <p>course_code</p>
+          <input type="text" placeholder="course_code" name="code" required>
+          <p>Course_name</p>
+          <input type="text" placeholder="Course_name" name="name" required>
+          <p>Course_credit</p>
+          <input type="text" placeholder="Course_credit" name="credit" required>
+          <p>Course_contents</p>
+          <input type="text" placeholder="Course_contents" name="contents" required>
+          <p>Programme</p>
+          <input type="text" placeholder="programme" name="programme" required>
+          <p>course_fee</p>
+          <input type="text" placeholder="fees" name="fees" required>
+
+          <input type="submit" value="upload">
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Submit</button>
+
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+
+</html>
